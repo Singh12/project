@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)] = "addId">
+<button class="btn btn-default" (click)="addMore()">Add More</button>
+<app-server *ngFor="let server of serverArray" [server]="server"></app-server>
+
