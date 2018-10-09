@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -8,10 +8,12 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[];
-  arrRecipe: Recipe = new Recipe('New Recipe', 'New RecipeDescription',  'http://www.kraftrecipes.com/-/media/assets/fall15_heroes/hot-parmesan-artichoke-dip-51255-642x428.jpg');
+  @Output() detailsRecipe = new EventEmitter<Recipe>();
+  arrRecipe: Recipe = new Recipe('New Recipe1', 'New RecipeDescription',  'https://i.pinimg.com/originals/0c/06/21/0c0621a1944625faf19503d57bb8f2df.jpg');
   constructor() {
     this.recipes = [
-      new Recipe('Demo Recipe', 'Demo Recipe Description', 'http://www.kraftrecipes.com/-/media/assets/fall15_heroes/hot-parmesan-artichoke-dip-51255-642x428.jpg'),
+      new Recipe('Demo Recipe2', 'Demo Recipe Description', 'https://i.pinimg.com/originals/0c/06/21/0c0621a1944625faf19503d57bb8f2df.jpg'),
+      new Recipe('Demo Recipe3', 'Demo Recipe Description', 'https://i.pinimg.com/originals/0c/06/21/0c0621a1944625faf19503d57bb8f2df.jpg'),
       ];
   }
 
@@ -19,5 +21,8 @@ export class RecipeListComponent implements OnInit {
   }
   addNewRecipeList() {
     this.recipes.unshift(this.arrRecipe);
+  }
+  singleRecipeClicked(singleRecip: any) {
+    this.detailsRecipe.emit(singleRecip);
   }
 }

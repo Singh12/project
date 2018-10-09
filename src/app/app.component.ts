@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipes';
-
+  recipeList = 'recipe';
   constructor() {}
-
+  displayRecipe(recipeDetails: string) {
+    this.recipeList = recipeDetails;
+  }
 }
 

@@ -1,4 +1,4 @@
-<a href="#" class="listgroup-item">
+<a href="#" class="list-group-item"  style="margin-bottom:10px;" (click)="singleRecipe()">
 <div class=" clearfix mb-3">
     <div class="float-left">
         <h4 class="list-group-item-heading">
@@ -8,8 +8,8 @@
             {{recipe.description}}
         </p>
     </div>
-    <span class="float-right">
-        <img [src]="recipe.imagePath" alt="Recipe Image" class="img-thumbnail">
+    <span class="float-right ml-auto">
+        <img [src]="recipe.imagePath" alt="Recipe Image" class="img-fluid">
     </span>
 </div>
 </a>
