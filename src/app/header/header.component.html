@@ -10,19 +10,17 @@
     <li class="nav-item">
       <a class="nav-link" (click)="showShopping('shoping')" href="#">Shopping List</a>
     </li>
-</ul>
-<ul class="ml-auto">
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" appMenustyleDecoretor>
+    <li class="nav-item dropdown" (mouseenter)="openMenu = true"
+    (mouseleave)="openMenu = false">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"  appMenustyleDecoretor>
        Manage
       </a>
       {{appMenustyleDecoretor}}
-      <div *ngIf="[appMenustyleDecoretor] == 'show'" class="dropdown-menu show" >
+      <div *ngIf="openMenu" class="dropdown-menu show" >
         <a class="dropdown-item" href="#">Link 1</a>
         <a class="dropdown-item" href="#">Link 2</a>
         <a class="dropdown-item" href="#">Link 3</a>
       </div>
     </li>
-  </ul>
+</ul>
 </nav>

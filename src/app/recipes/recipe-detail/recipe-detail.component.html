@@ -11,12 +11,12 @@
 </div>
 <div class="row">
 <div class="col-12">
-  <div class="btn-group">
+  <div class="btn-group" (mouseenter)="openmenu=true" (mouseleave)="openmenu=false">
     <button class="btn btn-primery dropdown-toggle">
       Manage Recipe <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu">
-      <li><a href="">ShoppingList</a></li>
+    <ul class="dropdown-menu show" *ngIf="openmenu">
+      <li><a (click)="addShoppingList()" style="cursor:pointer;" >ShoppingList</a></li>
       <li><a href="">Edit Recipe</a></li>
       <li><a href="">Delete Recipe</a></li>
     </ul>
@@ -30,6 +30,11 @@
 </div>
 <div class="row">
   <div class="col-12">
-    Ingredients
+    <ul class="list-group" *ngFor="let ingredient of detailsRecipes.ingrdient">
+      <li class="list-group-item">
+        {{ingredient.name}} - {{ingredient.amount}}
+      </li>
+     
+    </ul>
   </div>
 </div>
